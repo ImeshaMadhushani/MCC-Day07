@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# React Parent-Child Communication 
+# 2020ICT90
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+This is a simple React application that demonstrates parent-child communication using state and props. The parent component (`App.js`) passes a function as a prop to the child component (`Childcom.js`), and the child component calls this function to send data back to the parent. The parent then updates its state based on the data received from the child.
 
-## Available Scripts
+## Files
+- `App.js`: The parent component that manages the state and passes a function to the child component.
+- `Childcom.js`: The child component that calls the function passed down by the parent to send data back.
+- `App.css`: Basic styling for the components.
+- `package.json`: Contains project dependencies and configuration.
 
-In the project directory, you can run:
+## Key Concepts Covered
+1. **State Management with `useState`**: The parent component manages a piece of state (`childname`) that gets updated based on input from the child component.
+2. **Props and Functions**: The parent passes a function (`receiveName`) to the child component through props, allowing the child to update the parent's state.
+3. **Functional Components**: Both the parent and child components are functional components, which are a core part of modern React development.
 
-### `npm start`
+## How It Works
+1. The `App.js` component renders the `Childcom` component and passes a function `receiveName` as a prop (`setfun`).
+2. The `Childcom` component immediately calls the `setfun` function when it is rendered, passing the string `"My Name is Bob"` to the parent.
+3. The `receiveName` function updates the parent's state (`childname`) with the value passed from the child.
+4. The parent component then renders the updated state inside a `<p>` tag, showing the message: "Parent: My child said: My Name is Bob".
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How to Run
+1. Clone the repository to your local machine.
+2. Navigate to the project folder and run `npm install` to install all the dependencies.
+3. Start the development server by running `npm start`.
+4. Open your browser and go to `http://localhost:3000` to see the application in action.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Output
+![Screenshot 2024-11-21 204515](https://github.com/user-attachments/assets/12dcdc7a-2886-428d-9321-956902d722dc)
